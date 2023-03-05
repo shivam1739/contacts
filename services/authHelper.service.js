@@ -1,9 +1,9 @@
 const { User } = require("../models/index");
 
-const getUserByEmail = async (email) => {
+const getUserByEmail = async (body) => {
   const response = await User.findOne({
     where: {
-      email: email,
+      email: body.email,
     },
   });
   return response;
