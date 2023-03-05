@@ -3,7 +3,7 @@ const authServices = require("../services/auth.service");
 
 const jwt = require("jsonwebtoken");
 const signUp = async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   if (!req.body) {
     return res.json({
       message: "please provide sufficent data",
@@ -13,7 +13,7 @@ const signUp = async (req, res) => {
   }
   try {
     const response = await authServices.signUp(req.body);
-    console.log(response);
+    // console.log(response);
     return res.json({
       message: "succsessfully signup",
       status: 200,

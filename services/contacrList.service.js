@@ -84,11 +84,11 @@ const findContactByContactId = async ({ userId, contactId }) => {
   return response;
 };
 const deleteContact = async ({ userId, contactId }) => {
-  console.log(
-    "==========================================================",
-    userId,
-    contactId
-  );
+  // console.log(
+  //   "==========================================================",
+  //   userId,
+  //   contactId
+  // );
   const response = await ContactList.destroy({
     where: {
       userId: userId,
