@@ -40,7 +40,7 @@ const findContacts = async (req, res) => {
   } else if (req.query.contactId) {
     response = await findContactByContactId(req, res);
   }
-  console.log("", response);
+  // console.log("", response);
   if (response.length == 0) {
     return res.json({
       message: "contact not found",
@@ -67,7 +67,8 @@ const findAllContact = async (req, res) => {
       data: response,
     });
   } catch (err) {
-    return console.log(err);
+    console.log(err);
+    return;
   }
 };
 
@@ -76,7 +77,8 @@ const findContactByName = async (req, res) => {
     const response = await contactsServices.findContactByName(req.query);
     return response;
   } catch (err) {
-    return err;
+    console.log(err);
+    return;
   }
 };
 const findContactByContactId = async (req, res) => {
@@ -84,7 +86,8 @@ const findContactByContactId = async (req, res) => {
     const response = await contactsServices.findContactByContactId(req.query);
     return response;
   } catch (err) {
-    return err;
+    console.log(err);
+    return;
   }
 };
 const findContactByContactNumber = async (req, res) => {
@@ -94,7 +97,8 @@ const findContactByContactNumber = async (req, res) => {
     );
     return response;
   } catch (err) {
-    return err;
+    console.log(err);
+    return;
   }
 };
 const findContactByEmail = async (req, res) => {
@@ -102,7 +106,8 @@ const findContactByEmail = async (req, res) => {
     const response = await contactsServices.findContactByEmail(req.query);
     return response;
   } catch (err) {
-    return err;
+    console.log(err);
+    return;
   }
 };
 
@@ -117,7 +122,8 @@ const deleteContact = async (req, res) => {
       data: response,
     });
   } catch (err) {
-    return err;
+    console.log(err);
+    return;
   }
 };
 

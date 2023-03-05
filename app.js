@@ -7,7 +7,7 @@ const app = express();
 const Port = process.env.PORT || 3000;
 const authRoute = require("./routes/auth.route");
 const contactRoute = require("./routes/contactList.route");
-console.log(Port);
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
