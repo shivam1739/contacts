@@ -52,6 +52,7 @@ const signIn = async (req, res) => {
       data: {},
     });
   }
+  console.log(process.env.JWT_SECRET_KEY);
   var token = jwt.sign(
     {
       email: userData.email,
