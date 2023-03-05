@@ -21,7 +21,7 @@ const isAuthenticated = async (req, res, next) => {
     });
   }
 
-  const user = await authHelperService.getUserByEmail(response.email);
+  const user = await authHelperService.getUserByEmail(response);
   if (!user) {
     return res.json({
       status: 401,
