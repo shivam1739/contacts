@@ -52,7 +52,7 @@ const signIn = async (req, res) => {
       data: {},
     });
   }
-  console.log(process.env.JWT_SECRET_KEY);
+  // console.log(process.env.JWT_SECRET_KEY);
   var token = jwt.sign(
     {
       email: userData.email,
@@ -67,7 +67,11 @@ const signIn = async (req, res) => {
     message: "successfully login",
     status: 200,
     success: true,
-    data: { email: userData.email, userId: userData.id },
+    data: {
+      email: userData.email,
+      userId: userData.id,
+      name: userData.firstName + " " + userData.lastName,
+    },
     token: token,
   });
 };
