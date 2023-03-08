@@ -114,7 +114,6 @@ const findContactByEmail = async (req, res) => {
 const deleteContact = async (req, res) => {
   try {
     const response = await contactsServices.deleteContact(req.query);
-    console.log(req.query);
     return res.json({
       message: "successfully delete contact",
       status: 200,
